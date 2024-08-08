@@ -1,0 +1,35 @@
+@import './src/App.scss';
+
+.overview {
+    background: linear-gradient(to right, #fff, #87ceeb, #2ecc71);
+    position: relative;
+}
+
+.overview::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $navLinkHeight;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), #fff);
+  }
+
+.video-link {
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 15px
+}
+
+.summary-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 92px 15%;
+}
+
+@media (max-width: $tablet-width) {
+    .summary-container {
+        padding: 20px
+    }
+}

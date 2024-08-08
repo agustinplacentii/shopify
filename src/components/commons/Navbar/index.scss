@@ -1,0 +1,39 @@
+@import './src/App.scss';
+
+.navbar {
+    display: flex;
+    gap: 20px
+}
+
+.link.active {
+  position: relative;
+}
+
+.link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px; /* Ajusta el grosor del borde */
+  background-color: black; /* Ajusta el color del borde */
+  animation: slider 0.5s forwards; /* Ajusta la duración de la animación */
+}
+
+@keyframes slider {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes reverseSlider {
+  to {
+    width: 0%;
+  }
+}
+
+@media (max-width: $tablet-width) {
+    .navbar {
+      display: none
+    }
+  }

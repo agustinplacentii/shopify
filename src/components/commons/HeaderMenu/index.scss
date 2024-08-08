@@ -1,0 +1,33 @@
+@import './src/App.scss';
+
+.header-menu {
+    position: absolute;
+    background: white;
+    width: inherit;
+    z-index: 1;
+    margin-top: $navLinkHeight;
+    width: 100%;
+    animation: moverBorde 1s;
+}
+
+  @keyframes moverBorde {
+    0% {
+      transform: translateY(-20%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .tab-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+  }
+  
+  .tab-content.active {
+    border-bottom: 1px solid gray;
+    padding: 20px;
+    height: auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }

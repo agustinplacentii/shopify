@@ -1,0 +1,22 @@
+@import './src/App.scss';
+
+.link {
+    color: black;
+    text-decoration: none;
+    height: $navLinkHeight;
+    display: flex;
+    align-items: center;
+
+    :first-child {
+        margin-left: 5px;
+    }
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    svg {
+        position: relative;
+        top: 3px
+    }
+}

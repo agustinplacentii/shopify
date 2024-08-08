@@ -1,0 +1,75 @@
+@import './src/App.scss';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15%;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0));
+}
+
+.header.active {
+    background: #fff;
+    border-bottom: 1px solid gray;
+}
+
+.login-section {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.navbar-section {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    height: $navLinkHeight;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+.logo-text {
+    font-style: italic;
+    font-weight: bold;
+    font-size: x-large;
+    color: black
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.menu-button {
+    border: none;
+    background: none;
+    cursor: pointer
+}
+
+#join-free-button {
+    color: black
+}
+
+@media (max-width: $tablet-width) {
+    #login-button {
+        display: noned
+    }
+
+    .header {
+        padding: 20px
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .menu-button {
+        display: none
+    }
+}

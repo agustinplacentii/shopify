@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "jsx": "preserve",
+      "lib": ["dom", "es2020"],
+      "allowJs": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "strict": true,
+      "forceConsistentCasingInFileNames": true,
+      "outDir": "./dist", // Optional output directory
+      "baseUrl": ".",
+      "paths": {
+        "@components": ["src/components/index.ts"],
+        "@components/*": ["src/components/*"]
+      },
+      "resolveJsonModule": true
+    },
+    "include": ["./src", "**/*.ts", "**/*.tsx"],
+    "exclude": ["node_modules", "dist"],
+  }
