@@ -9,15 +9,23 @@
   position: relative;
 }
 
+.link.active:hover {
+  text-decoration: none;
+}
+
 .link.active::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0;
-  height: 3px; /* Ajusta el grosor del borde */
-  background-color: black; /* Ajusta el color del borde */
-  animation: slider 0.5s forwards; /* Ajusta la duración de la animación */
+  height: 3px;
+  background-color: black;
+  animation: slider 0.5s forwards;
+}
+
+.link.inactive {
+  animation: reverseSlider 0.5s forwards; /* Ajusta la duración de la animación */
 }
 
 @keyframes slider {

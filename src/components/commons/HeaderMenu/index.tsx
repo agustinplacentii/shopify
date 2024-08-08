@@ -1,39 +1,35 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import ClickAwayListener from "@mui/material/ClickAwayListener"
+import { setTab } from "src/redux/slices/overviewSlice"
 import "./index.scss"
+import Content from "./content"
+import Paper from "@mui/material/Paper"
 
 const HeaderMenu = () => {
+	const dispatch = useDispatch()
 	const tab = useSelector((state: any) => state.overview.value)
 
-	return (
-		<div className="header-menu">
-			<div className={`tab-content ${tab === 1 ? "active" : ""}`}>
-				<div>
-					Contenido para tab 1Contenido para tab 1Contenido para tab 1Contenido
-					para tab 1Contenido para tab 1Contenido para tab 1Contenido para tab 1
-				</div>
-				<div>Contenido para tab 1</div>
-				<div>Contenido para tab 1</div>
-				<div>Contenido para tab 1</div>
-				<div>Contenido para tab 1</div>
-				<div>
-					Contenido para tab 1Contenido para tab 1Contenido para tab 1Contenido
-					para tab 1Contenido para tab 1Contenido para tab 1Contenido para tab
-					1Contenido para tab 1Contenido para tab 1
-				</div>
-				<div>Contenido para tab 1</div>
-				<div>Contenido para tab 1</div>
-				<div>Contenido para tab 1</div>
-			</div>
+	const handleClickAway = (event: any) => {
+		if (event.target.tagName !== "A" && event.target.tagName !== "BUTTON") {
+			dispatch(setTab(0))
+		} else {
+			event.stopPropagation()
+		}
+	}
 
-			<div className={`tab-content ${tab === 2 ? "active" : ""}`}>
-				Contenido para tab 2
-			</div>
-
-			<div className={`tab-content ${tab === 3 ? "active" : ""}`}>
-				Contenido para tab 3
-			</div>
-		</div>
-	)
+	if (tab !== 0)
+		return (
+			<ClickAwayListener
+				onClickAway={event => {
+					handleClickAway(event)
+				}}
+			>
+				<Paper elevation={3}>
+					<Content />
+				</Paper>
+			</ClickAwayListener>
+		)
+	else return <Content />
 }
 
 export default HeaderMenu

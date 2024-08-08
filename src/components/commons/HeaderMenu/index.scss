@@ -2,22 +2,25 @@
 
 .header-menu {
     position: absolute;
-    background: white;
     width: inherit;
     z-index: 1;
     margin-top: $navLinkHeight;
     width: 100%;
-    animation: moverBorde 1s;
 }
 
-  @keyframes moverBorde {
-    0% {
-      transform: translateY(-20%);
-    }
-    100% {
-      transform: translateY(0);
-    }
+.header-menu.open {
+  background: white;
+  animation: fallDown 0.5s;
+}
+
+@keyframes fallDown {
+  from {
+    transform: translateY(-100%);
   }
+  to {
+    transform: translateY(0);
+  }
+}
   
   .tab-content {
     height: 0;
