@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-	value: 0,
+	tab: 0,
+	previousTab: 0,
 	status: "idle",
 }
 
@@ -10,10 +11,13 @@ const overviewSlice = createSlice({
 	initialState,
 	reducers: {
 		setTab: (state, action) => {
-            state.value = action.payload;
+            state.tab = action.payload;
+        },
+		setPreviousTab: (state, action) => {
+            state.previousTab = action.payload;
         },
 	},
 })
 
-export const { setTab } = overviewSlice.actions
+export const { setTab, setPreviousTab } = overviewSlice.actions
 export default overviewSlice.reducer

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux"
 import "./index.scss"
 
 const Header = () => {
-	const tab = useSelector((state: any) => state.overview.value)
+	const tab = useSelector((state: any) => state.overview.tab)
 
 	return (
 		<div>

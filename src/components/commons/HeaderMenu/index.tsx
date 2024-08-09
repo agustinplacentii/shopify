@@ -1,16 +1,17 @@
 import { useDispatch, useSelector } from "react-redux"
 import ClickAwayListener from "@mui/material/ClickAwayListener"
-import { setTab } from "src/redux/slices/overviewSlice"
+import { setPreviousTab, setTab } from "src/redux/slices/overviewSlice"
 import "./index.scss"
 import Content from "./content"
 import Paper from "@mui/material/Paper"
 
 const HeaderMenu = () => {
 	const dispatch = useDispatch()
-	const tab = useSelector((state: any) => state.overview.value)
+	const tab = useSelector((state: any) => state.overview.tab)
 
 	const handleClickAway = (event: any) => {
 		if (event.target.tagName !== "A" && event.target.tagName !== "BUTTON") {
+			dispatch(setPreviousTab(tab))
 			dispatch(setTab(0))
 		} else {
 			event.stopPropagation()
